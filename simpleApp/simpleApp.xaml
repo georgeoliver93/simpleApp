@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="simpleApp.simpleApp">
+    
+    <ContentPage.Content>
+        <ScrollView>
+              <StackLayout Padding="40" BackgroundColor="DarkViolet">
+            
+                <!-- <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+                    <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+                </Frame> -->
+
+                <Image Source="XAML_Logo.png"
+                       WidthRequest="{OnPlatform iOS=300, Android=250}"
+                    HorizontalOptions="Center" />
+
+                <Label Text="My Simple App!!!" TextColor="White"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            
+                <Entry x:Name="Fnumber" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center" 
+                       TextColor="White">
+                    <!-- BackgroundColor="white" -->
+                </Entry>
+
+                <Entry x:Name="Snumber" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center" 
+                       TextColor="White">
+                </Entry>
+            
+                <Button 
+                    BackgroundColor="LightCoral"
+                    Clicked="addAllInput" 
+                    Text="Add" 
+                    HorizontalOptions="CenterAndExpand"
+                    TextColor="White">
+                </Button>
+
+                <Image Source="R.png" />
+
+                <Label 
+                       Padding="40" 
+                       Text="TOTAL:" 
+                       VerticalOptions="Center" 
+                       HorizontalTextAlignment="Center" 
+                       TextColor="White">
+                   
+                    </Label>
+
+                    <Entry x:Name="Total" 
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center" 
+                       TextColor="White">
+                </Entry>
+
+                <Label 
+                       Padding="40"
+                       Text="Enter Your Email Address" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       TextColor="White">
+                </Label>
+
+                <SearchBar Placeholder="HelloWorld!@hotmail.com" 
+                           TextColor="White"/>
+
+                <Image Source="Pika.jpg" />
+                  
+                <Button
+                    Text="Get Repository Data"
+                    Clicked="OnButtonClicked" />
+                <CollectionView x:Name="collectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                                <Label Text="{Binding Description}"
+                               TextColor="Silver"
+                               FontSize="Small" />
+                                <Label Text="{Binding GitHubHomeUrl}"
+                               TextColor="Gray"
+                               FontSize="Caption" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
